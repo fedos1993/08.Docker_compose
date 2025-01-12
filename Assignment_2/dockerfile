@@ -1,7 +1,7 @@
 # Stage1
 FROM golang:1.23.4-bookworm AS builder
 WORKDIR /app
-COPY main.go .
+COPY Assignment_2/main.go .
 RUN go build -o app main.go
 
 

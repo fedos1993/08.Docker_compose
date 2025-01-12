@@ -3,7 +3,7 @@ name: Build and Deploy Docker Image
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build:
@@ -25,7 +25,7 @@ jobs:
       uses: docker/build-push-action@v6
       with:
         context: .
-        file: ./dockerfile
+        file: ./Assignment_2/dockerfile
         push: true
         tags: ${{ secrets.DOCKERHUB_USERNAME }}/app-go:latest
     - name: Slack Notification
