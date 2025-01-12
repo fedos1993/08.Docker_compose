@@ -28,10 +28,10 @@ jobs:
         file: ./Assignment_2/dockerfile
         push: true
         tags: ${{ secrets.DOCKERHUB_USERNAME }}/app-go:latest
+      continue-on-error: false
     - name: Slack Notification
+      if: always()
       uses: rtCamp/action-slack-notify@v2
-      with:
-        status: ${{ job.status }}
       env:
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
         SLACK_TITLE: "Image build result for ${{ github.repository }}"
