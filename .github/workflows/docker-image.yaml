@@ -35,6 +35,7 @@ jobs:
       env:
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
         SLACK_TITLE: "Image build result for ${{ github.repository }}"
+        SLACK_COLOR: ${{ job.status }}
         SLACK_MESSAGE: |
           Result is ${{ job.status }}
           Commit: ${{ github.sha }}
