@@ -2,7 +2,7 @@
 FROM golang:1.23.4-bookworm AS builder
 WORKDIR /app
 COPY Assignment_2/main.go .
-#RUN go build -o app main.go
+RUN go build -o app main.go
 
 
 #Stage2
