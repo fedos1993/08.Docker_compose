@@ -38,4 +38,4 @@ jobs:
         SLACK_COLOR: ${{ job.status }}
         SLACK_MESSAGE: |
           Result is ${{ job.status }}
-          Commit: ${{ github.sha }}
+          Commit message: ${{ github.event.head_commit.message }}
